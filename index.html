@@ -19,32 +19,9 @@
         .article img { width: 100%; max-height: 200px; object-fit: cover; border-radius: 5px; margin-top: 10px; }
         .footer { background: #2c3e50; color: white; text-align: center; padding: 10px; margin-top: 20px; }
     </style>
-    <script>
-        function updateTime() {
-            const now = new Date();
-            document.getElementById('time').textContent = now.toLocaleString();
-        }
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((position) => {
-                    document.getElementById('location').textContent = `Local Time and Location: ${position.coords.latitude.toFixed(2)}, ${position.coords.longitude.toFixed(2)}`;
-                });
-            } else {
-                document.getElementById('location').textContent = "Local Time Unavailable";
-            }
-        }
-        setInterval(updateTime, 60000);
-        window.onload = function () {
-            updateTime();
-            getLocation();
-        };
-    </script>
 </head>
 <body>
     <header>SG City News</header>
-    <div id="location-time">
-        <span id="location"><span id="time"></span>
-    </div>
     <nav>
         <a href="#">Home</a>
     </nav>
